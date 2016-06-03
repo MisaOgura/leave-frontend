@@ -1,26 +1,10 @@
 {
   "name": "smartAlarm-mobile",
-  "app_id": "9c6cf829",
+  "app_id": "cbcba9bb",
   "proxies": [
     {
-      "path": "/api/user",
-      "proxyUrl": "https://makers-alarm.herokuapp.com/users/sign_in.json"
-    },
-    {
-      "path": "/stations",
-      "proxyUrl": "https://makers-alarm.herokuapp.com/stations"
-    },
-    {
-      "path": "/api/user/signup",
-      "proxyUrl": "https://makers-alarm.herokuapp.com/users/sign_up"
-    },
-    {
-      "path": "/api/weather",
-      "proxyUrl": "https://makers-alarm.herokuapp.com/weathers"
-    },
-    {
-      "path": "/alarms",
-      "proxyUrl": "https://makers-alarm.herokuapp.com/alarms"
+      "path": "/api",
+      "proxyUrl": "https://makers-alarm.herokuapp.com"
     }
   ]
 }

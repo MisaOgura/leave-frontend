@@ -12,10 +12,10 @@ describe('DashCtrl', function() {
       });
     };
   }));
-
-  it('shows controller', function() {
-    var controller = createController();
-    console.log(controller);
-    expect(controller).toBeTruthy();
-  });
+  // 
+  // it('shows controller', function() {
+  //   var controller = createController();
+  //   console.log(controller);
+  //   expect(controller).toBeTruthy();
+  // });
 });

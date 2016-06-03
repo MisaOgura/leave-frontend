@@ -1,4 +1,8 @@
-angular.module('smartAlarm', ['ionic', 'smartAlarm.controllers', 'smartAlarm.services', 'ngResource', 'ion-datetime-picker', 'ionic-modal-select'])
+angular.module('smartAlarm', ['ionic', 'smartAlarm.controllers', 'smartAlarm.services', 'ngResource', 'ion-datetime-picker', 'ionic-modal-select', 'ngCordova'])
+
+.constant('ApiEndpoint', {
+  url: 'http://localhost:8100/api'
+})
 
 .filter('capitalize', function() {
   return function(input, all) {
@@ -80,22 +84,39 @@ angular.module('smartAlarm', ['ionic', 'smartAlarm.controllers', 'smartAlarm.ser
         controller: 'AccountCtrl'
       }
     }
+  })
+
+  .state('tab.alarm', {
+    url: '/alarm',
+    views : {
+      'tab-alarm' :{
+        templateUrl: 'templates/tab-alarm.html',
+        controller: 'AlarmCtrl'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/landing');
 
 })
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-    }
-
-    if (window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+.run(function($ionicPlatform, $rootScope, $timeout) {
+    $ionicPlatform.ready(function() {
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+        window.plugin.notification.local.onadd = function (id, state, json) {
+            var notification = {
+                id: id,
+                state: state,
+                json: json
+            };
+            $timeout(function() {
+                $rootScope.$broadcast("$cordovaLocalNotification:added", notification);
+            });
+        };
+    });
 });
