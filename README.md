@@ -1,25 +1,20 @@
-Ionic App Base
-=====================
+# *LEAVE* - smart alarm for London Transport
+This mobile app is built in Ionic and consumes a Rails back-end (see [LEAVE backend](https://github.com/MisaOgura/leave-backend.git)). A user can select starting and ending stations and be advised of an appropriate time to depart given transport and weather conditions.  
 
-A starting project for Ionic that optionally supports using custom SCSS.
+## Technologies
+LEAVE is built in Ionic and tested with Protractor.
 
-## Using this project
+## Usage instructions
+* Fork the repository.
+* Download locally with `git clone repo-url`
+* Run `bower install`.
+* Run `gulp remove-proxy` to update code to access Rails API hosted on Heroku.
+* Run `ionic serve`.
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+Have fun!
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
-
-```bash
-$ npm install -g ionic
-```
-
-Then run: 
-
-```bash
-$ ionic start myProject tabs
-```
-
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+## Team
++ Misa Ogura
++ Patrizio Donati
++ Shane Oston Stowe
++ Rhiannon Lolley Neville
